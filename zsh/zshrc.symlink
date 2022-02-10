@@ -6,9 +6,9 @@ export PROJECTS=~/bin
 
 # editor of choice -- Follow tutorial here: https://www.sublimetext.com/docs/2/osx_command_line.html
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-export EDITOR='subl -w'
-export SVN_EDITOR='subl -w'
-export VISUAL='subl -w'
+export EDITOR='code'
+export SVN_EDITOR='code'
+export VISUAL='code'
 
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
