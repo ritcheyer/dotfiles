@@ -16,9 +16,9 @@ alias subl="open /Applications/Sublime\ Text.app"
 
 # editor of choice -- Follow tutorial here: https://www.sublimetext.com/docs/2/osx_command_line.html
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-export EDITOR='code'
-export SVN_EDITOR='code'
-export VISUAL='code'
+# export EDITOR='code'
+# export SVN_EDITOR='code'
+# export VISUAL='code'
 
 alias cls='clear' # Good 'ol Clear Screen command
 
