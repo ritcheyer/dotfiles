@@ -4,6 +4,7 @@
 [hub]
         protocol = https
 [alias]
+        recent = "!r() { count=$1; git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:=10} | column -ts'|'}; r"
         co = checkout
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
@@ -15,12 +16,18 @@
         branch = auto
         ui = true
 [core]
-	excludesfile = /Users/eritchey/.gitignore
+        excludesfile = /Users/eritchey/.gitignore
         editor = vim
 [apply]
         whitespace = nowarn
+[merge]
+        tool = Kaleidoscope
+        keepBackup = false
 [mergetool]
         keepBackup = false
+        prompt = false
+[diff]
+        tool = Kaleidoscope
 [difftool]
         prompt = false
 [help]
@@ -31,14 +38,28 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+[credential]
+        helper = osxkeychain
 [user]
-	name = Eric Ritchey
-	email = eritchey@tesla.com
+        name = Eric Ritchey
+        email = eritchey@tesla.com
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+        cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+        path =
+[difftool "Kaleidoscope"]
+        cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+        trustExitCode = true
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+        cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+        trustExitCode = true
 [commit]
-	template = /Users/eritchey/.stCommitMsg
+        template = /Users/eritchey/.stCommitMsg
+[filter "lfs"]
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+[init]
+        defaultBranch = main
+[pull]
+        rebase = true
