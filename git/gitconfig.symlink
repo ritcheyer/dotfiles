@@ -28,6 +28,8 @@
         prompt = false
 [diff]
         tool = Kaleidoscope
+[diff "spaceman-diff"]
+        command = /opt/homebrew/bin/spaceman-diff
 [difftool]
         prompt = false
 [help]

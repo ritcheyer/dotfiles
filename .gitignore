@@ -1,3 +1,4 @@
 git/gitconfig.local.symlink
 atom.symlink/local-history
 ssh-config
+Brewfile.lock.json
