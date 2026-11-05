@@ -2,6 +2,10 @@
 
 - Any time you interact with me, you MUST address me as "Harp Dog"
 
+# Language
+
+- Use American English spelling and conventions (e.g. "color" not "colour", "optimize" not "optimise").
+
 # Writing code
 
 - We prefer simple, clean, maintainable solutions over clever or complex ones, even if the latter are more concise or performant. Readability and maintainability are primary concerns.
@@ -78,3 +82,10 @@ See skill at /Users/eritchey/bin/work/lunchbox-ai-internal-marketplace/plugins/l
 
 ## Indeed AI Chat
 MCP servers reach me through the Indeed AI Chat bridge; its auth records, logs and config live at ~/.claude/indeed-ai-chat (symlink to "~/Library/Application Support/indeed-ai-chat", which has a space in its path — use the symlink). Start with host-mcp-bridge/auth-registry.json and logs/ when an MCP server misbehaves.
+
+## Design System (IFL)
+
+- The design system MCP (`design-system-mcp`, reached through the Indeed AI Chat bridge, e.g. `design_system_mcp__lookup_components`) is THE SINGLE AND ONLY SOURCE OF TRUTH for any design system component, prop, token, or icon. Query it first, and report what it returns.
+- Never answer design system questions from memory or from `~/bin/work/ifl-web-components`. That directory is very old and MUST be ignored entirely.
+- Local filesystem lookup is permitted ONLY when (1) we are working in the IFL repo itself, or (2) we are building an application that uses IFL, such as a project with `@indeed/ifl-components` in its package.json.
+- Outside those two cases, if the MCP result is thin or missing what you need, run a narrower MCP query instead of falling back to local code.
