@@ -69,8 +69,6 @@
 
 [includeIf "gitdir:/Users/eritchey/indeed/"]
     path = .gitconfig-ind
-[includeIf "gitdir:/Users/eritchey/indeed/"]
-    path = .gitconfig-ind
 [includeIf "gitdir:/Users/eritchey/env"]
     path = .gitconfig-ind
 [includeIf "gitdir:~/artifacts/"]
